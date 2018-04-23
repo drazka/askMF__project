@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="utf-8">
+    {% block styles %}
+    {% endblock %}
+    </head>
+    <body>
+    {% block content %}
+    {% endblock %}
+    {% block afterform %}
+    {% endblock %}
+<footer>
+    {% block footer %}
+    <p><a href="{%  url 'nip_list' %}">lista wprowadzonych nr NIP</a></p>
+    {% if user.is_authenticated %}
+        <p>jestes zalogowany jako {{  user.username }}</p>
+        <p><a href="{%  url 'logout' %}">wyloguj</a></p>
+    {% else %}
+        <p><a href="{%  url 'login' %}">zaloguj</a></p>
+    {% endif %}
+    {% endblock %}
+</footer>
+</body>
+</html>

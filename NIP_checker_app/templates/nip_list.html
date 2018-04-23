@@ -1,0 +1,15 @@
+{%  extends 'base.html' %}
+{% block content %}
+
+    <ul>
+    {% for object in nips_list %}
+    <li>
+        {{  object.nip_number }} wynik: {{  object.result_from_MF }} dodano: {{  object.add_date }}
+        sprawdzono: {{  object.check_date }}
+    </li>
+    {% endfor %}
+    </ul>
+
+    <p><a href="{%  url 'check_nip_list' %}">sprawdz liste</a></p>
+    <p><a href="{%  url 'create_nip' %}">dodaj NIP</a></p>
+{% endblock %}

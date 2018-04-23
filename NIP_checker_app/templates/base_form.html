@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }} <!-- jako paragrafy czyli od nowych lini -->
+        <input type="submit" value="{% block buttonname %}{% endblock %}">
+    </form>
+
+{% endblock %}
